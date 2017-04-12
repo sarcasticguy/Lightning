@@ -1,13 +1,17 @@
-float startX=0;
-float startY=150;
-float endX=0;
-float endY=150;
-void setup()
-{
+float startX;
+float startY;
+float endX;
+float endY;
+void setup(){
   size(300,300);
-  strokeWeight(3);
+  strokeWeight(4);
   background(0);
+  startX=width/2;
+  startY=height/2;
+  endX=0;
+  endY=150;
 }
+
 void draw()
 {
   stroke(random(255), random(255), random(255));
@@ -17,12 +21,14 @@ void draw()
    line(startX, startY, endX, endY);
    startX=endX;
    startY=endY;
+   
+   triangle(150, 100, 75, 200, 225, 200);
   }
 }
 void mousePressed()
 {
-  startX=0;
-  startY=150;
+  startX=width/2;
+  startY=height/2;
   endX=0;
   endY=150;
 }
